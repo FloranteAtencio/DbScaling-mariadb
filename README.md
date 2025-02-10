@@ -14,7 +14,8 @@ Note:replication_user should exists only in master database instance
  FLUSH PRIVILEGES;`
  `show master status;`
 
-access slave database isntance :
+access slave database instance :
+
  `CHANGE MASTER TO 
    MASTER_HOST='mariadb-master',
    MASTER_USER='slave_user',
@@ -26,13 +27,15 @@ START SLAVE;`
 
 
 for  master and slave
+
 `CREATE USER 'maxscale'@'%' IDENTIFIED BY 'maxscale';
 GRANT SUPER, REPLICA MONITOR, REPLICATION CLIENT, REPLICATION SLAVE, SHOW DATABASES, EVENT, PROCESS, SLAVE MONITOR, READ_ONLY ADMIN ON *.* TO 'maxscale'@'%';
 GRANT SELECT ON mysql.* TO 'maxscale'@'%';
 FLUSH PRIVILEGES;`
 
 
-debugin commands:
+Debug Command:
+
 relay_master_log_file:master-bin.000002
 exec_master_log_pos=1930
 `SELECT BINLOG_GTID_POS('master-bin.000002', '1930');`

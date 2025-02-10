@@ -21,7 +21,7 @@ access slave database instance :
    MASTER_USER='slave_user',
    MASTER_PASSWORD='123',
    MASTER_LOG_FILE=<'--master-bin.000002--'>, --replace it base on your master staus appear
-   master_use_gtid=slave_pos,
+   master_use_gtid=<--slave_pos , '01-02-05'-->, -- it can be manual gtid type
    MASTER_LOG_POS=<--1199-->; --replace it base on your master staus appear
 START SLAVE;`
 

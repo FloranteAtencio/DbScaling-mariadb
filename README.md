@@ -3,14 +3,8 @@
 Disclaimer 
 I've done my best to ensure clarity and accuracy in this content. Please feel free to point out any errors or areas for improvement.
 
-Run the composer:
-
-acess the master maraidb:
-
-create database and sample plus user for replication:
-
-note:
-Need replication_user and maxscale_user seperately. but replication_user should exists only in master database instance 
+Run the composer then acess the master maraidb create database and sample plus user for replication_user
+Note:replication_user should exists only in master database instance 
 
 `CREATE DATABASE football;
  USE football;
@@ -39,17 +33,26 @@ FLUSH PRIVILEGES;`
 
 
 debugin commands:
-
-`relay_master_log_file:master-bin.000002`
-`exec_master_log_pos=1930`
+relay_master_log_file:master-bin.000002
+exec_master_log_pos=1930
 `SELECT BINLOG_GTID_POS('master-bin.000002', '1930');`
-`SHOW VARIABLES LIKE 'log_bin';`
-`DROP USER 'maxscale'@'%';`
-`SELECT user, host FROM mysql.user;`
-`SHOW GRANTS FOR 'slave_user'@'%';`
-`tail -f /var/log/maxscale/maxscale.log`
+In order to find the  gtid-pos
+
 `SELECT @@gtid_current_pos;`
 `SELECT @@gtid_slave_pos;`
+this command will do for gtid too.
+
+`SHOW VARIABLES LIKE 'log_bin';`
+make user log bin = on
+
+`DROP USER 'maxscale'@'%';`
+`SHOW GRANTS FOR 'maxscale'@'%';`
+`SELECT user, host FROM mysql.user;`
+commands that related to user
+
+`tail -f /var/log/maxscale/maxscale.log`
+check for logs
+
 
 
 

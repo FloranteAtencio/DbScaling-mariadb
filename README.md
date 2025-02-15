@@ -6,13 +6,13 @@ I've done my best to ensure clarity and accuracy in this content. Please feel fr
 Run the composer then acess the master maraidb create database and sample plus user for replication_user
 Note:replication_user should exists only in master database instance 
 
-`CREATE DATABASE football;
- USE football;
- CREATE TABLE players (name varchar(50) DEFAULT NULL,position varchar(50) DEFAULT NULL);
- INSERT INTO players VALUES ('Lionel Messi','Forward');
- GRANT REPLICATION SLAVE ON *.* TO 'slave_user'@'%' IDENTIFIED BY '123'; #enter password
- FLUSH PRIVILEGES;`
- `show master status;`
+`CREATE DATABASE football; \
+ USE football; \
+ CREATE TABLE players (name varchar(50) DEFAULT NULL,position varchar(50) DEFAULT NULL); \
+ INSERT INTO players VALUES ('Lionel Messi','Forward'); \
+ GRANT REPLICATION SLAVE ON *.* TO 'slave_user'@'%' IDENTIFIED BY '123'; #enter password \
+ FLUSH PRIVILEGES; \`
+ `show master status; \`
 
 access slave database instance :
 

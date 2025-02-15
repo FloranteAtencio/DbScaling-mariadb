@@ -1,10 +1,11 @@
 # Configuration
 
-Disclaimer 
+### Disclaimer
+
 I've done my best to ensure clarity and accuracy in this content. Please feel free to point out any errors or areas for improvement.
 
-Run the composer then acess the master maraidb create database and sample plus user for replication_user
-Note:replication_user should exists only in master database instance 
+## Run the composer then acess the master maraidb create database and sample plus user for replication_user
+### Note:replication_user should exists only in master database instance 
 
 `CREATE DATABASE football; `
 
@@ -20,7 +21,7 @@ Note:replication_user should exists only in master database instance
 
  `show master status; `
 
-access slave database instance :
+## access slave database instance :
 
  `CHANGE MASTER TO `
   ` MASTER_HOST='mariadb-master',`
@@ -38,7 +39,7 @@ access slave database instance :
 `START SLAVE;`
 
 
-for  master and slave
+## for  master and slave
 
 `CREATE USER 'maxscale'@'%' IDENTIFIED BY 'maxscale';`
 
@@ -50,7 +51,7 @@ ADMIN ON *.* TO 'maxscale'@'%';`
 `FLUSH PRIVILEGES;`
 
 
-Debug Command:
+## Debug Command:
 
 relay_master_log_file:master-bin.000002
 exec_master_log_pos=1930

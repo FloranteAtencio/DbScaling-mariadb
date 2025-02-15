@@ -47,7 +47,7 @@ FLUSH PRIVILEGES;
 ```
 
 ## Debug Command:
-
+```
 relay_master_log_file:master-bin.000002
 exec_master_log_pos=1930
 `SELECT BINLOG_GTID_POS('master-bin.000002', '1930');`
@@ -67,7 +67,7 @@ commands that related to user
 
 `tail -f /var/log/maxscale/maxscale.log`
 check for logs
-
+```
 
 
 
